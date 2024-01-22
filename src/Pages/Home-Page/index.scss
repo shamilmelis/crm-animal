@@ -1,0 +1,13 @@
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  .wrapper_empty {
+    width: 15%;
+    min-height: 100%;
+  }
+  .wrapper_content {
+    width: 85%;
+    min-height: 100%;
+  }
+}

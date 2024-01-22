@@ -1,0 +1,191 @@
+$comf: "Comfortaa", sans-serif;
+$nuni: "Nunito", sans-serif;
+$mont: "Montserrat", sans-serif;
+
+main {
+  .announ_section {
+    padding: 80px 15px 0;
+    .announ_container {
+      max-width: 1100px;
+      margin: 0 auto;
+      .announ_box {
+        display: flex;
+        flex-direction: column;
+        .announ_row {
+          display: flex;
+          flex-wrap: wrap;
+          .col {
+            width: 50%;
+            padding: 10px;
+            .box {
+              display: flex;
+              height: 100%;
+            }
+            .box_inform {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+              gap: 25px;
+              padding: 10px;
+              .announ_title {
+                font-family: $nuni;
+                font-size: 23px;
+                font-weight: 700;
+              }
+              .box_inform_inner {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+                .announ_type {
+                  font-family: $mont;
+                  font-size: 15px;
+                  font-weight: 500;
+                  .announ_type_value {
+                    color: #8f00ff;
+                  }
+                }
+                .announ_descr {
+                  font-family: $mont;
+                  font-size: 15px;
+                  font-weight: 500;
+                }
+                .announ_description {
+                  font-family: $mont;
+                  font-size: 15px;
+                  line-height: 24px;
+                }
+              }
+              .box_contacts_inner {
+                display: flex;
+                flex-direction: column;
+                .call_btn {
+                  font-family: $mont;
+                  font-weight: 500;
+                  font-size: 14px;
+                  padding: 12px 18px;
+                  background: #8f00ff;
+                  color: #fff;
+                  border: none;
+                  border-radius: 5px;
+                  cursor: pointer;
+                  i {
+                    font-size: 13px;
+                    padding: 0 10px 0 0;
+                  }
+                }
+              }
+            }
+            .box-image {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+              .box_image_corusel {
+                display: flex;
+                max-width: 400px;
+                min-height: 400px;
+                overflow: hidden;
+                .announ_image {
+                  display: block;
+                  margin: 0 auto;
+                  width: 100%;
+                  height: auto;
+                  object-fit: cover;
+                  border-radius: 5px;
+                  animation: appear 0.5s ease-in-out;
+                }
+                @keyframes appear {
+                  0% {opacity: 0}
+                  100% {opacity: 1}
+                }
+              }
+              .box_image_pics {
+                display: flex;
+                gap: 2px;
+                .pic_index {
+                  width: 100%;
+                  max-width: 65px;
+                  height: 65px;
+                  object-fit: cover;
+                  cursor: pointer;
+                  border-radius: 5px;
+                }
+                .pic_index.Active {
+                  border: 3px solid #8f00ff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .modal_contacts.Opened {
+    display: flex;
+  }
+  @keyframes appear {
+    0% {opacity: 0}
+    100% {opacity: 1}
+  }
+  .modal_contacts {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    animation: appear 0.2s ease-in-out;
+    .modal_contacts_box {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 400px;
+      min-height: 200px;
+      height: auto;
+      background: #fff;
+      border-radius: 10px;
+      padding: 10px;
+      .close_modal_btn {
+        position: absolute;
+        top: 3%;
+        right: 2%;
+        font-size: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
+      }
+      .modal_contacts_info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        .author_avatar {
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          max-width: 70px;
+          height: 70px;
+          border-radius: 99em;
+          border: 1px solid gainsboro;
+        }
+        .author_name {
+          font-family: $comf;
+          font-size: 22px;
+          font-weight: 300;
+        }
+        .author_phoneNumber {
+          font-family: $mont;
+          font-size: 20px;
+          font-weight: 500;
+          text-decoration: none;
+          color: #000;
+        }
+      }
+    }
+  }
+}

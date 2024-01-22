@@ -1,0 +1,270 @@
+$comf: 'Comfortaa', sans-serif;
+$nuni: 'Nunito', sans-serif;
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.wrapper_empty {
+  width: 15%;
+}
+
+.wrapper_content {
+  width: 85%;
+  animation: appear 0.5s ease-in-out;
+}
+
+main {
+  .info_section {
+    padding: 40px 15px 0;
+    .info_container {
+      max-width: 1100px;
+      margin: 0 auto;
+      .info_box {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        .create_box {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 10px;
+          .create_title {
+            font-size: 18px;
+            font-family: $comf;
+          }
+          .create_announ_button {
+            padding: 8px 12px;
+            border: none;
+            background: #8f00ff;
+            color: #fff;
+            font-family: $comf;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            i {
+              padding: 0 6px 0 0;
+              font-size: 13px;
+            }
+          }
+        }
+        .info_row {
+          display: flex;
+          flex-wrap: wrap;
+          @keyframes appear {
+            0% {opacity: 0}
+            100% {opacity: 1}
+          }
+          .col {
+            width: 33.333%;
+            flex-basis: 33.333%;
+            transition: 0.5s ease-in-out;
+            padding: 5px;
+            min-height: 230px;
+            animation: appear 0.5s ease-in-out;
+            .box {
+              position: relative;
+              display: flex;
+              align-items: flex-start;
+              flex-direction: column;
+              height: 100%;
+              border-radius: 5px;
+              padding: 10px;
+              gap: 10px;
+              .route_link {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+              }
+              .box_image {
+                display: block;
+                margin: 0 auto;
+                width: 100%;
+                height: auto;
+                border-radius: 8px;
+              }
+              .box_title {
+                font-family: $nuni;
+                font-size: 19px;
+                font-weight: 700;
+                color: #000;
+              }
+              .box_descr {
+                font-family: $comf;
+                font-size: 13px;
+                color: gray;
+                flex-grow: 1;
+                line-height: 23px;
+              }
+              .button_look {
+                font-family: $comf;
+                font-size: 13px;
+                padding: 8px 10px;
+                border: none;
+                background: #8f00ff;
+                color: #fff;
+                border-radius: 5px;
+                cursor: pointer;
+                i {
+                  padding: 0 5px;
+                  color: #fff;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .create_modal.Opened {
+    display: flex;
+  }
+  .create_modal {
+    position: fixed;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    padding: 20px;
+    .create_modal_box {
+      overflow: scroll;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 700px;
+      height: 100%;
+      border-radius: 10px;
+      min-height: 300px;
+      background: #fff;
+      gap: 30px;
+      animation: appear 0.5s ease-in-out;
+      .modal_actions {
+        display: flex;
+        align-items: flex-start;
+        flex-grow: 1;
+        .modal_title {
+          font-size: 20px;
+          font-family: $comf;
+          flex-grow: 1;
+        }
+        .modal_close_btn {
+          border: none;
+          background: none;
+          cursor: pointer;
+          i {
+            font-size: 20px;
+          }
+        }
+      }
+      .modal_inputs {
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        flex-grow: 9;
+        .modal_head {
+          font-size: 15px;
+          font-family: $nuni;
+        }
+        .modal_head_inp {
+          width: 100%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid gainsboro;
+          font-family: 'Montserrat', sans-serif;
+          outline: none;
+        }
+        .modal_descr {
+          font-size: 15px;
+          font-family: $nuni;
+        }
+        .modal_descr_textarea {
+          outline: none;
+          border: 1px solid gainsboro;
+          border-radius: 4px;
+          padding: 10px;
+          font-family: 'Montserrat', sans-serif;
+          resize: none;
+          width: 100%;
+          min-height: 250px;
+        }
+        .modal_author {
+          font-size: 15px;
+          font-family: $nuni;
+        }
+        .modal_author_inp {
+          width: 100%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid gainsboro;
+          font-family: 'Montserrat', sans-serif;
+          outline: none;
+        }
+        .modal_phoneNum {
+          font-size: 15px;
+          font-family: $nuni;
+        }
+        .modal_phoneNum_inp {
+          width: 100%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid gainsboro;
+          font-family: 'Montserrat', sans-serif;
+          outline: none;
+        }
+        .modal_type {
+          font-size: 15px;
+          font-family: $nuni;
+        }
+        .modal_type_inp {
+          width: 100%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid gainsboro;
+          font-family: 'Montserrat', sans-serif;
+          outline: none;
+        }
+        .modal_img.Upload {
+          display: block;
+        }
+        .modal_img {
+          display: block;
+          margin: 0 auto;
+          width: 100%;
+          height: auto;
+          object-fit: cover;
+        }
+        .modal_img_inp {
+          width: 100%;
+          padding: 10px;
+          border-radius: 4px;
+          border: 1px solid gainsboro;
+          font-family: 'Montserrat', sans-serif;
+          outline: none;
+        }
+      }
+      .modal_accept_create {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .create_button {
+          padding: 10px 20px;
+          border: none;
+          background: #8f00ff;
+          border-radius: 5px;
+          color: #fff;
+          font-family: $comf;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}

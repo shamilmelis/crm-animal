@@ -1,0 +1,138 @@
+@media screen and (max-width: 890px) {
+  main {
+    .announ_section {
+      .announ_container {
+        .announ_box {
+          .announ_row {
+            .col {
+              width: 100%;
+            }
+            .col-order-2 {
+              order: 2;
+            }
+            .col-order-1 {
+              order: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .wrapper {
+    .wrapper_empty {
+      display: none;
+    }
+  }
+  main {
+    .announ_section {
+      padding: 80px 5px 0;
+      .announ_container {
+        .announ_box {
+          .announ_row {
+            .col {
+              .box_inform {
+                padding: 0;
+              }
+              .box-image {
+                border-radius: 10px;
+                padding: 10px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                align-items: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  main {
+    .announ_section {
+      .announ_container {
+        .announ_box {
+          .announ_row {
+            .col {
+              .box_inform {
+                align-items: normal;
+                .announ_title {
+                  font-size: 19px;
+                }
+                .box_inform_inner {
+                  .announ_type {
+                    font-size: 13px;
+                  }
+                  .announ_descr {
+                    font-size: 13px;
+                  }
+                  .announ_description {
+                    font-size: 13px;
+                  }
+                }
+                .box_contacts_inner {
+                  .call_btn {
+                    width: 100%;
+                    font-size: 12px;
+                    i {
+                      font-size: 11px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    .modal_contacts {
+      .modal_contacts_box {
+        width: 90%;
+        .modal_contacts_info {
+          .author_avatar {
+            max-width: 55px;
+            height: 55px;
+          }
+          .author_name {
+            font-size: 17px;
+          }
+          .author_phoneNumber {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  main {
+    .announ_section {
+      .announ_container {
+        .announ_box {
+          .announ_row {
+            .col {
+              .box-image {
+                .box_image_pics {
+                  .pic_index {
+                    width: 16%;
+                    height: 60px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

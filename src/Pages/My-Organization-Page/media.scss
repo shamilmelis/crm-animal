@@ -1,0 +1,123 @@
+@media screen and (max-width: 1090px) {
+  .wrapper {
+    main {
+      .orgs_section {
+        .orgs_container {
+          .orgs_box {
+            .orgs_row {
+              .col {
+                width: 50%;
+                flex-basis: 50%;
+                transition: 0.5s ease-in-out;
+                .box {
+                  .organization_name {
+                    font-size: 19px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .wrapper_empty {
+    display: none;
+  }
+  #wrapper {
+    .wrapper_content {
+      width: 100%;
+    }
+  }
+  .wrapper {
+    main {
+      .orgs_section {
+        padding: 100px 10px 0;
+        .orgs_container {
+          .orgs_box {
+            .orgs_row {
+              .col {
+                .box {
+                  .organization_name {
+                    font-size: 17px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 620px) {
+  .wrapper {
+    main {
+      .orgs_section {
+        .orgs_container {
+          .orgs_box {
+            .orgs_row {
+              .col {
+                .box {
+                  .organization_name {
+                    font-size: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper {
+    main {
+      .orgs_section {
+        .orgs_container {
+          .orgs_box {
+            .orgs_row {
+              .col {
+                width: 100%;
+                flex-basis: 100%;
+                .box {
+                  .organization_name {
+                    font-size: 19px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .wrapper {
+    main {
+      .orgs_section {
+        .orgs_container {
+          .orgs_box {
+            .orgs_row {
+              .col {
+                .box {
+                  .organization_name {
+                    font-size: 16px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

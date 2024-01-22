@@ -1,0 +1,74 @@
+$comf: "Comfortaa", sans-serif;
+
+.wrapper_empty {
+  width: 15%;
+  min-width: 210px;
+}
+
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  main {
+    .orgs_section {
+      padding: 40px 15px 0;
+      .orgs_container {
+        max-width: 1200px;
+        margin: 0 auto;
+        .orgs_box {
+          display: flex;
+          flex-direction: column;
+          gap: 30px;
+          .orgs_title {
+            font-size: 25px;
+            font-family: $comf;
+            font-weight: 500;
+          }
+          .orgs_row {
+            display: flex;
+            flex-wrap: wrap;
+            .col {
+              width: 33.333%;
+              padding: 5px;
+              min-height: 230px;
+              transition: 0.5s ease-in-out;
+              .box {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                border-radius: 5px;
+                height: 100%;
+                padding: 10px;
+                box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+                transition: 0.5s ease-in-out;
+                .route_link {
+                  position: absolute;
+                  width: 100%;
+                  height: 100%;
+                }
+                .organization_name {
+                  font-size: 24px;
+                  font-family: $comf;
+                  font-weight: 500;
+                  color: #8f00ff;
+                  transition: 0.5s ease-in-out;
+                  text-align: center;
+                }
+              }
+              .box:hover {
+                background: #8f00ff;
+                transition: 0.5s ease-in-out;
+                .organization_name {
+                  color: #fff;
+                  transition: 0.5s ease-in-out;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

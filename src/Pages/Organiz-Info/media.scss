@@ -1,0 +1,82 @@
+@media screen and (max-width: 1000px) {
+  main {
+    .info_section {
+      .info_container {
+        .info_box {
+          .info_row {
+            .col {
+              width: 50%;
+              flex-basis: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 790px) {
+  main {
+    .info_section {
+      padding: 100px 5px 0;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    .info_section {
+      .info_container {
+        .info_box {
+          .info_row {
+            .col {
+              .box {
+                .box_title {
+                  font-size: 13px;
+                }
+                .box_descr {
+                  font-size: 10px;
+                }
+                .button_look {
+                  font-size: 10px;
+                  padding: 7px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  main {
+    .create_modal {
+      .create_modal_box {
+        .modal_actions {
+          .modal_title {
+            font-size: 17px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  main {
+    .info_section {
+      .info_container {
+        .info_box {
+          .info_row {
+            .col {
+              width: 100%;
+              flex-basis: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
