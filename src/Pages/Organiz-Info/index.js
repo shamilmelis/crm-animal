@@ -4,18 +4,21 @@ import '../Organiz-Info/media.scss'
 import NavMenu from "../../Components/NavMenu";
 import axios from "axios";
 import {useState, useEffect} from "react";
-import {Link, useParams} from "react-router-dom";
+import {Link} from "react-router-dom";
 const OrganizInfo = () => {
     const [open, setOpen] = useState(false)
     const [accept, setAccept] = useState('')
     const [getAnnoun, setGetAnnoun] = useState([])
     const [title, setTitle] = useState('')
     const [descr, setDescr] = useState('')
+    const [counter, setCounter] = useState(0)
     const [img, setImg] = useState('')
     const [author, setAuthor] = useState('')
     const [authorPhone, setAuthorPhone] = useState('')
     const [type, setType] = useState('')
 
+    const [setting, setSetting] = useState(false)
+    const [selectStg, setSelectStg] = useState(0)
     const getAnn = () => {
         axios.get('https://65a6516774cf4207b4efbc00.mockapi.io/dogs')
             .then(res => {
@@ -44,6 +47,13 @@ const OrganizInfo = () => {
         setAuthor('')
         setAuthorPhone('')
     }
+    const addImageInput = () => {
+        setCounter(counter + 1)
+        console.log(counter)
+    }
+    useEffect(() => {
+
+    }, [img, counter, setting, selectStg])
 
     const createAnnoun = () => {
         if (title) {
@@ -86,6 +96,15 @@ const OrganizInfo = () => {
         }
     }
 
+    const functionSettings = (el) => {
+        setSetting(!setting)
+        setSelectStg(el)
+    }
+
+    const editFunction = () => {
+
+    }
+
     return (
         <div className={'wrapper'} id={'wrapper'}>
             <div className={'wrapper_empty'}></div>
@@ -105,11 +124,22 @@ const OrganizInfo = () => {
                                             return (
                                                 <div className={'col'} key={el.id}>
                                                     <div className={'box'}>
-                                                        <Link to={`/myorgs/v-teplye-ryki/announcement/${el.id}`} className={'route_link'}></Link>
-                                                        <img src={el.image ? el.image.map(el => el).slice(0, 1) : ''} alt="" className={'box_image'}/>
-                                                        <h1 className={'box_title'}>{el.title.length > 45 ? el.descr.substring(0, 45) + '...' : el.title}</h1>
-                                                        <p className={'box_descr'}>{el.descr.length > 80 ? el.descr.substring(0, 80) + '...' : el.descr}</p>
-                                                        <button className={'button_look'}><i className="fa-solid fa-eye"></i>Посмотреть</button>
+                                                        <div className={'box_route'}>
+                                                            <Link to={`/myorgs/v-teplye-ryki/announcement/${el.id}`} className={'route_link'}></Link>
+                                                            <img src={el.image ? el.image.map(el => el).slice(0, 1) : ''} alt="" className={'box_image'}/>
+                                                            <h1 className={'box_title'}>{el.title.length > 45 ? el.descr.substring(0, 45) + '...' : el.title}</h1>
+                                                            <p className={'box_descr'}>{el.descr.length > 80 ? el.descr.substring(0, 80) + '...' : el.descr}</p>
+                                                        </div>
+                                                        <div className={'box_actions'}>
+                                                            <button className={'button_look'}><i className="fa-solid fa-eye"></i>Посмотреть</button>
+                                                            <div className={'box_edit'}>
+                                                                <button className={'edit_btn'} onClick={() => functionSettings(el.id)}><i className="fa-solid fa-ellipsis"></i></button>
+                                                                <div className={setting === false ? 'box_edit_inner' : (el.id === selectStg ? 'box_edit_inner Opened' : 'box_edit_inner')}>
+                                                                    <button className={'editEl_btn'}><i className="fa-solid fa-pencil"></i></button>
+                                                                    <button className={'deleteEl_btn'}><i className="fa-solid fa-trash"></i></button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             )
@@ -129,13 +159,18 @@ const OrganizInfo = () => {
                                 <span className={'modal_head'}>Название</span>
                                 <input className={'modal_head_inp'} onChange={(e) => setTitle(e.target.value)}/>
                                 <span className={'modal_descr'}>Описание</span>
-                                <textArea class={'modal_descr_textarea'} onChange={(e) => setDescr(e.target.value)}/>
+                                <textarea className={'modal_descr_textarea'} onChange={(e) => setDescr(e.target.value)}/>
                                 <span className={'modal_author'}>Имя владельца</span>
                                 <input className={'modal_author_inp'} type="text" defaultValue={author} onChange={(e) => setAuthor(e.target.value)}/>
                                 <span className={'modal_phoneNum'}>Номер владельца</span>
                                 <input className={'modal_phoneNum_inp'} type="text" defaultValue={authorPhone} onChange={(e) => setAuthorPhone(e.target.value)}/>
                                 <span className={'modal_image'}>Ссылка на изображение (бета):</span>
-                                <input className={'modal_img_inp'} type="text" defaultValue={img} onChange={(e) => setImg(e.target.value)}/>
+                                <div className={'modal_upload_image_box'}>
+                                    <div className={'modal_upload_image_inner'}>
+                                        <input className={'modal_img_inp'} type="text" defaultValue={img} onChange={(e) => setImg(e.target.value)}/>
+                                        <button className={'modal_img_add_btn'} onClick={() => addImageInput()}>+</button>
+                                    </div>
+                                </div>
                                 <span className={'modal_type'}>Тип</span>
                                 <input className={'modal_type_inp'} type="text" defaultValue={type} onChange={(e) => setType(e.target.value)}/>
                                 <button onClick={() => setAccept(img)}>Загрузить</button>

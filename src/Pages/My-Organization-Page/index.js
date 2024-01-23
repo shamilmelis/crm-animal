@@ -13,7 +13,7 @@ const MyOrganizationPage = () => {
                     <section className={'orgs_section'}>
                         <div className={'orgs_container'}>
                             <div className={'orgs_box'}>
-                                <h1 className={'orgs_title'}>Мои организации</h1>
+                                <h1 className={'orgs_title'}>Организации</h1>
                                 <div className={'orgs_row'}>
                                     <div className={'col'}>
                                         <div className={'box'}>

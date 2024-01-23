@@ -94,6 +94,23 @@
 
 @media screen and (max-width: 500px) {
   main {
+    .announ_section {
+      .announ_container {
+        .announ_box {
+          .announ_row {
+            .col {
+              .box-image {
+                align-items: flex-start;
+                .box_image_corusel {
+                  width: 100%;
+                  height: 350px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
     .modal_contacts {
       .modal_contacts_box {
         width: 90%;
@@ -107,29 +124,6 @@
           }
           .author_phoneNumber {
             font-size: 16px;
-          }
-        }
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 450px) {
-  main {
-    .announ_section {
-      .announ_container {
-        .announ_box {
-          .announ_row {
-            .col {
-              .box-image {
-                .box_image_pics {
-                  .pic_index {
-                    width: 16%;
-                    height: 60px;
-                  }
-                }
-              }
-            }
           }
         }
       }

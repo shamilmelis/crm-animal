@@ -9,7 +9,7 @@ const NavMenu = () => {
         <div className={open === false ? 'nav_bar' : 'nav_bar Opened'}>
             <div className={'nav_box'}>
                 <div className={'nav_logo'}>
-                    <h1 className={'nav_title'}>crm animal</h1>
+                    <h1 className={'nav_title'}>Помощь Животным (CRM)</h1>
                     <div className={'nav_burger'}>
                         <button className={'burger_btn'} onClick={() => setOpen(!open)}>
                             <i className="fi fi-rr-align-left"></i>
@@ -21,7 +21,7 @@ const NavMenu = () => {
                     <div className={'route'}>
                         <Link to={'/'} className={'route_link'}></Link>
                         <i className="fi fi-rr-apps"></i>
-                        <span className={'route_name'}>Мои организации</span>
+                        <span className={'route_name'}>Организации</span>
                     </div>
                     <div className={'route'}>
                         <Link to={'/tasks'} className={'route_link'}></Link>

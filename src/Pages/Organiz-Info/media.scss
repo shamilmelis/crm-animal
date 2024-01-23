@@ -31,15 +31,19 @@
           .info_row {
             .col {
               .box {
-                .box_title {
-                  font-size: 13px;
+                .box_route {
+                  .box_title {
+                    font-size: 13px;
+                  }
+                  .box_descr {
+                    font-size: 10px;
+                  }
                 }
-                .box_descr {
-                  font-size: 10px;
-                }
-                .button_look {
-                  font-size: 10px;
-                  padding: 7px;
+                .box_actions {
+                  .button_look {
+                    font-size: 10px;
+                    padding: 7px;
+                  }
                 }
               }
             }

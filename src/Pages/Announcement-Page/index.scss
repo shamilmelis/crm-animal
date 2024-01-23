@@ -81,8 +81,8 @@ main {
               gap: 10px;
               .box_image_corusel {
                 display: flex;
-                max-width: 400px;
-                min-height: 400px;
+                width: 80%;
+                height: 400px;
                 overflow: hidden;
                 .announ_image {
                   display: block;
@@ -101,10 +101,13 @@ main {
               .box_image_pics {
                 display: flex;
                 gap: 2px;
+                overflow: auto;
+                width: 80%;
                 .pic_index {
-                  width: 100%;
                   max-width: 65px;
-                  height: 65px;
+                  max-height: 65px;
+                  min-width: 65px;
+                  min-height: 65px;
                   object-fit: cover;
                   cursor: pointer;
                   border-radius: 5px;
