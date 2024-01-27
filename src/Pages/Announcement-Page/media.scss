@@ -28,9 +28,12 @@
   }
   main {
     .announ_section {
-      padding: 80px 5px 0;
+      padding: 80px 5px 50px;
       .announ_container {
         .announ_box {
+          .previous_page_box {
+            padding: 15px;
+          }
           .announ_row {
             .col {
               .box_inform {
@@ -41,6 +44,9 @@
                 padding: 10px;
                 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
                 align-items: center;
+                .box_image_pics {
+                  width: 100%;
+                }
               }
             }
           }

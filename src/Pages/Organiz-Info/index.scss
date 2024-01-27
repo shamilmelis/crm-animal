@@ -61,7 +61,6 @@ main {
             width: 33.333%;
             flex-basis: 33.333%;
             transition: 0.5s ease-in-out;
-            padding: 5px;
             min-height: 230px;
             animation: appear 0.5s ease-in-out;
             .box {
@@ -121,6 +120,7 @@ main {
                   color: #fff;
                   border-radius: 5px;
                   cursor: pointer;
+                  text-decoration: none;
                   i {
                     padding: 0 5px;
                     color: #fff;
@@ -204,7 +204,7 @@ main {
     z-index: 999;
     padding: 20px;
     .create_modal_box {
-      overflow: scroll;
+      overflow: auto;
       padding: 20px;
       display: flex;
       flex-direction: column;
@@ -351,6 +351,255 @@ main {
           border-radius: 5px;
           color: #fff;
           font-family: $comf;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .modal_edit.Opened {
+    display: flex;
+    animation: appear 0.5s ease-in-out;
+  }
+  .modal_edit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    .modal_edit_box {
+      overflow: auto;
+      display: flex;
+      flex-direction: column;
+      width: 60%;
+      min-height: 250px;
+      height: 90%;
+      background: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      gap: 20px;
+      .modal_edit_images {
+        display: flex;
+        flex-wrap: wrap;
+        .modal_edit_image_inner {
+          position: relative;
+          width: 30%;
+          padding: 5px;
+          .modal_edit_actions {
+            position: absolute;
+            top: 4px;
+            right: 4px;
+            display: flex;
+            gap: 5px;
+            .change_image_btn {
+              border: none;
+              background: #fff;
+              color: orange;
+              padding: 5px 10px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+            .delete_image_btn {
+              border: none;
+              background: #fff;
+              color: red;
+              padding: 5px 10px;
+              border-radius: 5px;
+              cursor: pointer;
+            }
+          }
+          .modal_image {
+            width: 100%;
+            object-fit: cover;
+            height: 100%;
+            max-height: 350px;
+            min-height: 100px;
+            border-radius: 10px;
+          }
+          .small_modal_images.Active {
+            display: flex;
+            animation: appear 0.2s ease-in-out;
+          }
+          .small_modal_images {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            padding: 10px;
+            .small_modal_images_box {
+              display: flex;
+              flex-direction: column;
+              background: #fff;
+              width: 100%;
+              height: 100%;
+              padding: 10px;
+              border-radius: 10px;
+              .box_link {
+                display: flex;
+                flex-grow: 1;
+                input {
+                  padding: 5px 10px;
+                  width: 100%;
+                  height: 50px;
+                  outline: none;
+                  border-radius: 5px;
+                  font-family: 'Montserrat', sans-serif;
+                  border: 1px solid gainsboro;
+                }
+              }
+              .box_actions {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                .save_btn {
+                  padding: 5px 10px;
+                  border: none;
+                  border-radius: 5px;
+                  background: green;
+                  font-size: 12px;
+                  font-weight: 500;
+                  font-family: 'Montserrat', sans-serif;
+                  color: #fff;
+                  cursor: pointer;
+                }
+                .cancel_btn {
+                  padding: 5px 10px;
+                  border: 1px solid red;
+                  border-radius: 5px;
+                  font-size: 12px;
+                  font-weight: 500;
+                  font-family: 'Montserrat', sans-serif;
+                  background: #fff;
+                  color: red;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      }
+      .modal_edit_add_image {
+        display: flex;
+        padding: 10px;
+        .modal_edit_add_box {
+          display: flex;
+          flex-direction: column;
+          gap: 10px;
+          .add_image_btn {
+            padding: 8px 10px;
+            background: #8f00ff;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+          }
+          .add_image_box_inner.Active {
+            display: flex;
+            animation: appear 0.5s ease-in-out;
+          }
+          .add_image_box_inner {
+            display: none;
+            align-items: center;
+            gap: 1px;
+            input {
+              outline: none;
+              padding: 6px;
+              border: 1px solid gainsboro;
+              font-family: 'Montserrat', sans-serif;
+            }
+            button {
+              padding: 7px;
+              background: #8f00ff;
+              color: #fff;
+              font-family: 'Montserrat', sans-serif;
+              border: none;
+            }
+          }
+        }
+      }
+      .modal_edit_sections {
+        display: flex;
+        flex-wrap: wrap;
+        .col {
+          width: 50%;
+          padding: 5px;
+          .box {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            gap: 10px;
+            .section_name {
+              font-family: 'Montserrat', sans-serif;
+              font-size: 15px;
+              color: #000;
+            }
+            .section_input {
+              width: 100%;
+              outline: none;
+              border: 1px solid gainsboro;
+              border-radius: 5px;
+              padding: 10px;
+              font-family: 'Montserrat', sans-serif;
+            }
+          }
+        }
+      }
+      .modal_edit_descr {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 5px;
+        gap: 10px;
+        .descr_title {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 15px;
+          color: #000;
+        }
+        .textarea_descr {
+          outline: none;
+          width: 100%;
+          border: 1px solid gainsboro;
+          border-radius: 5px;
+          resize: none;
+          min-height: 300px;
+          padding: 10px;
+          font-family: 'Montserrat', sans-serif;
+        }
+      }
+      .modal_edit_actions {
+        display: flex;
+        justify-content: flex-start;
+        padding: 10px;
+        gap: 10px;
+        .save_btn {
+          padding: 15px 30px;
+          border: none;
+          border-radius: 5px;
+          background: #8f00ff;
+          color: #fff;
+          font-family: 'Montserrat', sans-serif;
+          cursor: pointer;
+        }
+        .cancel_btn {
+          padding: 15px 30px;
+          border: 1px solid gainsboro;
+          border-radius: 5px;
+          background: #fff;
+          color: #8f00ff;
+          font-family: 'Montserrat', sans-serif;
           cursor: pointer;
         }
       }

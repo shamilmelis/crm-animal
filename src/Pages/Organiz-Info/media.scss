@@ -20,6 +20,16 @@
     .info_section {
       padding: 100px 5px 0;
     }
+    .modal_edit {
+      .modal_edit_box {
+        width: 80%;
+        .modal_edit_images {
+          .modal_edit_image_inner {
+            width: 50%;
+          }
+        }
+      }
+    }
   }
 }
 
@@ -51,6 +61,37 @@
         }
       }
     }
+    .modal_edit {
+      .modal_edit_box {
+        .modal_edit_sections {
+          .col {
+            .box {
+              .section_name {
+                font-size: 12px;
+              }
+              .section_input {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+        .modal_edit_descr {
+          .textarea_descr {
+            font-size: 12px;
+          }
+        }
+        .modal_edit_images {
+          .modal_edit_image_inner {
+            width: 100%;
+            .box_link {
+              input {
+                font-size: 11px;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }
 
@@ -62,6 +103,24 @@
           .modal_title {
             font-size: 17px;
           }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    .modal_edit {
+      .modal_edit_box {
+        width: 90%;
+        .modal_edit_sections {
+          .col {
+            width: 100%;
+          }
+        }
+        .modal_edit_actions {
+          flex-direction: column;
         }
       }
     }

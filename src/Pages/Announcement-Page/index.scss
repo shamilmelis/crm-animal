@@ -11,6 +11,24 @@ main {
       .announ_box {
         display: flex;
         flex-direction: column;
+        .previous_page_box {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          .previous_page_btn {
+            border: none;
+            background: none;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            cursor: pointer;
+            color: #8f00ff;
+          }
+          span {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 15px;
+            color: #8f00ff;
+          }
+        }
         .announ_row {
           display: flex;
           flex-wrap: wrap;

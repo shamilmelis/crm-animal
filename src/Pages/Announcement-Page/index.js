@@ -2,43 +2,47 @@ import React from 'react'
 import '../Announcement-Page/index.scss'
 import '../Announcement-Page/media.scss'
 import NavMenu from "../../Components/NavMenu";
-import {useParams} from "react-router-dom";
+import {useParams, useNavigate} from "react-router-dom";
 import {useState, useEffect} from "react";
 import axios from 'axios'
+import NoImage from '../../Images/image_not_available.png'
 const AnnouncementPage = () => {
+    // Код который получает данные
     const {id} = useParams()
     const [getAnnoun, setGetAnnoun] = useState([])
     const [getImg, setGetImg] = useState('')
     const [modal, setModal] = useState(false)
     const [selectActive, setSelectActive] = useState(0)
+    const navigate = useNavigate()
+
+    // useEffect который получает данные изображений
     useEffect(() => {
         axios.get(`https://65a6516774cf4207b4efbc00.mockapi.io/dogs/${id}`)
             .then(res => {
                 setGetAnnoun(res.data)
                 setGetImg(res.data ? res.data.image.map(el => el).slice(0,1) : '')
-                console.log(getAnnoun)
             })
     }, [])
 
+    // Функция которая получает img и его index при нажатии на фото-карточки
     const takeSrc = (e, index) => {
         setGetImg(e)
         setSelectActive(index)
-        console.log(selectActive)
     }
-
     useEffect(() => {
     }, [getImg])
 
+    // Функция которая открывает и закрывает модалку "Контакты"
     const openModal = () => {
         setModal(true)
         document.body.style.overflow = "hidden"
     }
-
     const closeModal = () => {
         document.body.style.overflow = "visible"
         setModal(false)
     }
 
+    // Верстка
     return (
         <div className={modal === false ? 'wrapper' : 'wrapper scrollOff'} id={'wrapper'}>
             <div className={'wrapper_empty'}></div>
@@ -48,12 +52,19 @@ const AnnouncementPage = () => {
                     <section className={'announ_section'}>
                         <div className={'announ_container'}>
                             <div className={'announ_box'}>
+                                <div className={'previous_page_box'}>
+                                    <button className={'previous_page_btn'} onClick={() => navigate(-1)}>В теплые руки</button>
+                                    <span>/</span>
+                                    <span>обьявления</span>
+                                    <span>/</span>
+                                    <span>{getAnnoun.id}</span>
+                                </div>
                                 <div className={'announ_row'}>
                                     <div className={'col col-order-2'}>
                                         <div className={'box box_inform'}>
                                             <h1 className={'announ_title'}>{getAnnoun.title ? getAnnoun.title : getAnnoun.title}</h1>
                                             <div className={'box_inform_inner'}>
-                                                <span className={'announ_type'}>Тип: <span className={'announ_type_value'}>Питомец</span></span>
+                                                <span className={'announ_type'}>Тип: <span className={'announ_type_value'}>{getAnnoun.type ? getAnnoun.type : getAnnoun.type}</span></span>
                                                 <span className={'announ_descr'}>Описание:</span>
                                                 <p className={'announ_description'}>{getAnnoun.descr ? getAnnoun.descr : getAnnoun.descr}</p>
                                             </div>
@@ -65,18 +76,15 @@ const AnnouncementPage = () => {
                                     <div className={'col col-order-1'}>
                                         <div className="box box-image">
                                                 <div className={'box_image_corusel'}>
-                                                    <img src={getImg} alt="pic" className={'announ_image'}/>
+                                                    <img src={getAnnoun.image ? getAnnoun.image.length === 0 ? NoImage : getImg : getImg} alt="pic" className={'announ_image'}/>
                                                 </div>
                                             <div className={'box_image_pics'}>
                                                 {
-                                                    getAnnoun.image ?
-                                                        getAnnoun.image.map((el, index) => {
-                                                            return (
-                                                                <img src={el} alt="pic" className={selectActive === index ? 'pic_index Active' : 'pic_index'} onClick={(e) => takeSrc(e.target.src, index)}/>
-                                                            )
-                                                        })
-                                                        :
-                                                        ''
+                                                    getImg ? getAnnoun.image.map((el, index) => {
+                                                        return (
+                                                            <img src={el} alt="pic" className={selectActive === index ? 'pic_index Active' : 'pic_index'} onClick={(e) => takeSrc(e.target.src, index)}/>
+                                                        )
+                                                    }) : <img src={NoImage} alt="pic" className={'pic_index'}/>
                                                 }
                                             </div>
                                         </div>
