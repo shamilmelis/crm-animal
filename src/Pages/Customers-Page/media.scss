@@ -1,0 +1,118 @@
+@media screen and (max-width: 900px) {
+  .customers_section {
+    .customers_box {
+      .customers_container {
+        .customers_row {
+          .col {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+  main {
+    .customer_modal {
+      .customer_modal_box {
+        width: 80%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 790px) {
+  .wrapper {
+    .wrapper_content {
+      width: 100%;
+    }
+  }
+  main {
+    .customers_section {
+      padding: 100px 10px 0;
+      .customers_box {
+        .customers_container {
+          .customers_row {
+            .col {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  main {
+    .customers_section {
+      .customers_box {
+        .customers_container {
+          .customers_row {
+            .col {
+              .box {
+                .customer_info {
+                  .customer_personal_info {
+                    .customer_name {
+                      font-size: 14px;
+                    }
+                    .customer_phone {
+                      font-size: 11px;
+                    }
+                  }
+                }
+                .see-btn {
+                  font-size: 11px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .customer_modal {
+      .customer_modal_box {
+        .modal_content {
+          .customer_personal_info_m {
+            .customer_name_m {
+              font-size: 24px;
+            }
+            .customer_phone_m {
+              font-size: 12px;
+            }
+          }
+          .customer_appeal {
+            .appeal_descr {
+              font-size: 13px;
+            }
+            .appeal_id {
+              font-size: 13px;
+            }
+            .appeal_route {
+              font-size: 12px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  main {
+    .customers_section {
+      .customers_box {
+        .customers_container {
+          .customers_row {
+            .col {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+    .customer_modal {
+      .customer_modal_box {
+        width: 90%;
+      }
+    }
+  }
+}

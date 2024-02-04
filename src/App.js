@@ -6,6 +6,7 @@ import BuyPage from "./Pages/Buy-Page";
 import TasksPage from "./Pages/Tasks-Page";
 import OrganizInfo from "./Pages/Organiz-Info";
 import AnnouncementPage from "./Pages/Announcement-Page";
+import CustomersPage from "./Pages/Customers-Page";
 function App() {
   return (
     <>
@@ -14,6 +15,7 @@ function App() {
           <Route path={'/tasks'} element={<TasksPage></TasksPage>}></Route>
           <Route path={'/myorgs/v-teplye-ryki'} element={<OrganizInfo></OrganizInfo>}></Route>
           <Route path={'/myorgs/v-teplye-ryki/announcement/:id'} element={<AnnouncementPage></AnnouncementPage>}></Route>
+          <Route path={'/myorgs/v-teplye-ryki/customers'} element={<CustomersPage></CustomersPage>}></Route>
       </Routes>
     </>
   );

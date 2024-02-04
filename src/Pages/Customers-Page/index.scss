@@ -1,0 +1,210 @@
+$comf: 'Comfortaa', sans-serif;
+$nuni: 'Nunito', sans-serif;
+
+main {
+  min-height: 100%;
+  .customers_section {
+    padding: 40px 40px 0;
+    .customers_box {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      .back_to_page_box {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        .main_page_title {
+          font-size: 15px;
+          font-family: 'Montserrat', sans-serif;
+          color: #8f00ff;
+          text-decoration: none;
+        }
+        .page_title {
+          font-size: 15px;
+          font-family: 'Montserrat', sans-serif;
+          color: #8f00ff;
+        }
+        .page_title:before {
+          content: "/";
+          padding: 0 4px 0 1px;
+          font-size: 15px;
+        }
+      }
+      .customers_title {
+        font-size: 20px;
+        font-weight: 500;
+        font-family: 'Montserrat', sans-serif;
+      }
+      .customers_container {
+        max-width: 1200px;
+        .customers_row {
+          display: flex;
+          flex-wrap: wrap;
+          .col {
+            width: 50%;
+            padding: 5px;
+            .box {
+              display: flex;
+              flex-direction: column;
+              padding: 15px;
+              border: 1px solid gainsboro;
+              border-radius: 8px;
+              gap: 15px;
+              height: 100%;
+              .customer_info {
+                display: flex;
+                gap: 15px;
+                .customer_avatar {
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  width: 40px;
+                  height: 40px;
+                  border-radius: 99em;
+                  font-size: 15px;
+                  background: #8f00ff;
+                  font-weight: 500;
+                  color: #fff;
+                }
+                .customer_personal_info {
+                  display: flex;
+                  flex-direction: column;
+                  justify-content: center;
+                  gap: 4px;
+                  .customer_name {
+                    font-size: 18px;
+                    font-family: 'Montserrat', sans-serif;
+                  }
+                  .customer_phone {
+                    font-size: 13px;
+                    font-family: 'Montserrat', sans-serif;
+                  }
+                }
+              }
+              .see-btn {
+                align-self: flex-end;
+                padding: 5px 10px;
+                background: #8f00ff;
+                border-radius: 5px;
+                color: #fff;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 14px;
+                cursor: pointer;
+                border: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .customer_modal.Active {
+    display: flex;
+  }
+  .customer_modal {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    animation: appear 0.2s ease-in-out;
+    .customer_modal_box {
+      display: flex;
+      flex-direction: column;
+      width: 50%;
+      height: auto;
+      background: #fff;
+      border-radius: 8px;
+      padding: 10px;
+      .modal_actions {
+        display: flex;
+        justify-content: flex-end;
+        .modal_close-btn {
+          background: none;
+          border: none;
+          font-size: 25px;
+          cursor: pointer;
+          color: #000;
+          transition: 0.2s;
+        }
+        .modal_close-btn:hover {
+          color: #8f00ff;
+          transition: 0.2s;
+        }
+      }
+      .modal_content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        .customer_avatar_m {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 80px;
+          height: 80px;
+          font-size: 28px;
+          background: #8f00ff;
+          border-radius: 99em;
+          color: #fff;
+        }
+        .customer_personal_info_m {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 10px;
+          .customer_name_m {
+            font-size: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+          }
+          .customer_phone_m {
+            font-size: 15px;
+            font-family: $nuni;
+            font-weight: 500;
+          }
+         }
+        .customer_appeal {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background: #E4F8FF5E;
+          padding: 15px;
+          border-radius: 10px;
+          gap: 15px;
+          width: 100%;
+          .appeal_descr {
+            font-size: 15px;
+            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+          }
+          .appeal_id {
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'Montserrat', sans-serif;
+          }
+          .appeal_route {
+            font-size: 15px;
+            font-weight: 500;
+            color: #8f00ff;
+            text-decoration: none;
+            background: #fff;
+            padding: 10px;
+            font-family: 'Montserrat', sans-serif;
+          }
+          .appeal_route::before {
+            content: '|';
+            padding: 0 5px;
+          }
+        }
+      }
+    }
+  }
+}

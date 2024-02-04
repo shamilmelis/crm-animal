@@ -25,6 +25,38 @@ main {
         display: flex;
         flex-direction: column;
         gap: 30px;
+        .customers_box {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 10px;
+          padding: 10px;
+          .customers_title {
+            font-size: 18px;
+            font-family: $comf;
+            .customers_count {
+              font-size: 18px;
+              font-family: 'Montserrat', sans-serif;
+              color: #8f00ff;
+              font-weight: 500;
+            }
+          }
+          .customers_route {
+            padding: 8px 12px;
+            border: none;
+            background: #8f00ff;
+            color: #fff;
+            font-family: $comf;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+          }
+          i {
+            padding: 0 0 0 6px;
+            font-size: 13px;
+          }
+        }
         .create_box {
           display: flex;
           flex-direction: column;

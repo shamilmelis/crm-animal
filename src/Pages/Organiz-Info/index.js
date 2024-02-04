@@ -38,6 +38,16 @@ const OrganizInfo = () => {
     const [addImage, setAddImage] = useState(false)
     const [addLink, setAddLink] = useState('')
     const [getId, setGetId] = useState(0)
+    // Код который получает длинну массива - customers
+    const [customerLength, setCustomerLength] = useState(0)
+    // Функция которая получает длинну массива - customers
+    useEffect(() => {
+        axios.get(`https://65a6516774cf4207b4efbc00.mockapi.io/customers`)
+            .then(res => {
+                setCustomerLength(res.data.length)
+            })
+            .catch(err => console.log(err))
+    }, [])
     // Функция которая выдает данные с axios (mockapi)
     const getAnn = () => {
         axios.get('https://65a6516774cf4207b4efbc00.mockapi.io/dogs')
@@ -192,6 +202,13 @@ const OrganizInfo = () => {
                     <section className={'info_section'}>
                         <div className={'info_container'}>
                             <div className={'info_box'}>
+                                <div className={'customers_box'}>
+                                    <span className={'customers_title'}>Клиенты <span className={'customers_count'}>{customerLength === 0 ? '(0)' : `(${customerLength}+)`}</span></span>
+                                    <Link to={'/myorgs/v-teplye-ryki/customers'} className={'customers_route'}>
+                                        Перейти
+                                        <i className="fa-solid fa-chevron-right"></i>
+                                    </Link>
+                                </div>
                                 <div className={'create_box'}>
                                     <span className={'create_title'}>Создать обьявление</span>
                                     <button className={'create_announ_button'} onClick={() => openModal()}><i className="fa-solid fa-pen"></i>Создать</button>
