@@ -40,57 +40,85 @@ main {
         .customers_row {
           display: flex;
           flex-wrap: wrap;
+          border: 1px solid gainsboro;
+          border-radius: 8px;
+          padding: 15px;
           .col {
-            width: 50%;
+            width: 100%;
             padding: 5px;
+            .box:hover {
+              background: rgba(0, 0, 0, 0.1);
+              transition: 0.2s;
+            }
             .box {
               display: flex;
-              flex-direction: column;
+              align-items: center;
               padding: 15px;
-              border: 1px solid gainsboro;
-              border-radius: 8px;
-              gap: 15px;
+              gap: 20px;
+              border: none;
+              border-bottom: 1px solid gainsboro;
               height: 100%;
-              .customer_info {
+              .customer_id_box {
                 display: flex;
-                gap: 15px;
-                .customer_avatar {
-                  display: flex;
-                  justify-content: center;
-                  align-items: center;
-                  width: 40px;
-                  height: 40px;
-                  border-radius: 99em;
-                  font-size: 15px;
-                  background: #8f00ff;
-                  font-weight: 500;
-                  color: #fff;
-                }
-                .customer_personal_info {
-                  display: flex;
-                  flex-direction: column;
-                  justify-content: center;
-                  gap: 4px;
-                  .customer_name {
-                    font-size: 18px;
-                    font-family: 'Montserrat', sans-serif;
-                  }
-                  .customer_phone {
-                    font-size: 13px;
-                    font-family: 'Montserrat', sans-serif;
-                  }
+                justify-content: center;
+                .id {
+                  font-size: 18px;
+                  font-family: 'Montserrat', sans-serif;
+                  color: #8f00ff;
                 }
               }
-              .see-btn {
-                align-self: flex-end;
-                padding: 5px 10px;
-                background: #8f00ff;
-                border-radius: 5px;
-                color: #fff;
-                font-family: 'Montserrat', sans-serif;
-                font-size: 14px;
-                cursor: pointer;
-                border: none;
+              .customer_inner_box {
+                display: flex;
+                gap: 15px;
+                width: 100%;
+                .customer_info {
+                  display: flex;
+                  gap: 15px;
+                  flex-grow: 1;
+                  .customer_avatar {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    min-width: 40px;
+                    height: 40px;
+                    min-height: 40px;
+                    border-radius: 99em;
+                    font-size: 15px;
+                    background: #8f00ff;
+                    font-weight: 500;
+                    color: #fff;
+                  }
+
+                  .customer_personal_info {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 4px;
+
+                    .customer_name {
+                      font-size: 18px;
+                      font-family: 'Montserrat', sans-serif;
+                    }
+
+                    .customer_phone {
+                      font-size: 13px;
+                      color: gray;
+                      font-family: 'Montserrat', sans-serif;
+                    }
+                  }
+                }
+
+                .see-btn {
+                  align-self: flex-end;
+                  padding: 10px 10px;
+                  background: #8f00ff;
+                  border-radius: 5px;
+                  color: #fff;
+                  font-family: 'Montserrat', sans-serif;
+                  font-size: 14px;
+                  cursor: pointer;
+                  border: none;
+                }
               }
             }
           }

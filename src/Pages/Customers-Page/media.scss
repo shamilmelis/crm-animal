@@ -1,15 +1,4 @@
 @media screen and (max-width: 900px) {
-  .customers_section {
-    .customers_box {
-      .customers_container {
-        .customers_row {
-          .col {
-            width: 100%;
-          }
-        }
-      }
-    }
-  }
   main {
     .customer_modal {
       .customer_modal_box {
@@ -28,15 +17,6 @@
   main {
     .customers_section {
       padding: 100px 10px 0;
-      .customers_box {
-        .customers_container {
-          .customers_row {
-            .col {
-              width: 50%;
-            }
-          }
-        }
-      }
     }
   }
 }
@@ -47,20 +27,28 @@
       .customers_box {
         .customers_container {
           .customers_row {
+            padding: 0;
             .col {
               .box {
-                .customer_info {
-                  .customer_personal_info {
-                    .customer_name {
-                      font-size: 14px;
-                    }
-                    .customer_phone {
-                      font-size: 11px;
-                    }
+                .customer_id_box {
+                  .id {
+                    font-size: 10px;
                   }
                 }
-                .see-btn {
-                  font-size: 11px;
+                .customer_inner_box {
+                  .customer_info {
+                    .customer_personal_info {
+                      .customer_name {
+                        font-size: 14px;
+                      }
+                      .customer_phone {
+                        font-size: 11px;
+                      }
+                    }
+                  }
+                  .see-btn {
+                    font-size: 10px;
+                  }
                 }
               }
             }
@@ -103,7 +91,20 @@
         .customers_container {
           .customers_row {
             .col {
-              width: 100%;
+              .box {
+                .customer_inner_box {
+                  .customer_info {
+                    .customer_personal_info {
+                      .customer_name {
+                        font-size: 11px;
+                      }
+                      .customer_phone {
+                        font-size: 9px;
+                      }
+                    }
+                  }
+                }
+              }
             }
           }
         }

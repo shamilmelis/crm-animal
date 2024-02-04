@@ -35,7 +35,10 @@ const CustomersPage = () => {
             .then(res => {
                 setAnName(res.data)
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                console.log(err)
+                setAnName('undefined')
+            })
     }
     const uploadToModal = (id) => {
         axios.get(`https://65a6516774cf4207b4efbc00.mockapi.io/customers/${id}`)
@@ -67,43 +70,27 @@ const CustomersPage = () => {
                                                              setSelectedId(el.selectedId)
                                                          }}>
                                                         <div className="box">
-                                                            <div className={'customer_info'}>
-                                                                <span className={'customer_avatar'}>{el.customer_name ? el.customer_name.slice(0, 1) : el.customer_name.slice(0,1)}</span>
-                                                                <div className={'customer_personal_info'}>
-                                                                    <span className={'customer_name'}>{el.customer_name ? el.customer_name : el.customer_name}</span>
-                                                                    <span className={'customer_phone'}>| {el.customer_descr ? el.customer_descr : el.customer_descr}</span>
-                                                                </div>
+                                                            <div className={'customer_id_box'}>
+                                                                <span className={'id'}>#{el.id}</span>
                                                             </div>
-                                                            <button className={'see-btn'} onClick={() => {
-                                                                openModal()
-                                                                uploadToModal(el.id)
-                                                            }}>Подробнее</button>
+                                                            <div className={'customer_inner_box'}>
+                                                                <div className={'customer_info'}>
+                                                                    <span className={'customer_avatar'}>{el.customer_name ? el.customer_name.slice(0, 1) : el.customer_name.slice(0,1)}</span>
+                                                                    <div className={'customer_personal_info'}>
+                                                                        <span className={'customer_name'}>{el.customer_name ? el.customer_name : el.customer_name}</span>
+                                                                        <span className={'customer_phone'}>| {el.customer_phone ? el.customer_phone : el.customer_phone}</span>
+                                                                    </div>
+                                                                </div>
+                                                                <button className={'see-btn'} onClick={() => {
+                                                                    openModal()
+                                                                    uploadToModal(el.id)
+                                                                }}>Подробнее</button>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 )
                                             }) :
-                                            (customers.length === 0 ? 'Пусто.' : customers.map(el => {
-                                                return (
-                                                    <div className={'col'}
-                                                         onMouseEnter={() => {
-                                                             setSelectedId(el.selectedId)
-                                                         }}>
-                                                        <div className="box">
-                                                            <div className={'customer_info'}>
-                                                                <span className={'customer_avatar'}>{el.customer_name ? el.customer_name.slice(0, 1) : el.customer_name.slice(0,1)}</span>
-                                                                <div className={'customer_personal_info'}>
-                                                                    <span className={'customer_name'}>{el.customer_name ? el.customer_name : el.customer_name}</span>
-                                                                    <span className={'customer_phone'}>| {el.customer_descr ? el.customer_descr : el.customer_descr}</span>
-                                                                </div>
-                                                            </div>
-                                                            <button className={'see-btn'} onClick={() => {
-                                                                openModal()
-                                                                uploadToModal(el.id)
-                                                            }}>Подробнее</button>
-                                                        </div>
-                                                    </div>
-                                                )
-                                            }))
+                                            (customers.length === 0 ? 'Пусто.' : '')
                                     }
                                 </div>
                             </div>
@@ -125,7 +112,7 @@ const CustomersPage = () => {
                                 <div className={'customer_appeal'}>
                                     <p className={'appeal_descr'}>{customer.customer_descr ? customer.customer_descr : '123'}</p>
                                     <p className={'appeal_id'}>👇 По поводу 👇</p>
-                                    <Link to={`/myorgs/v-teplye-ryki/announcement/${selectedId}`} className={'appeal_route'}>{anName.title ? anName.title.slice(0, 50) + '...' : ''}</Link>
+                                    {anName === 'undefined' ? 'undefined' : <Link to={`/myorgs/v-teplye-ryki/announcement/${selectedId}`} className={'appeal_route'}>{anName.title ? anName.title.slice(0, 50) + '...' : ''}</Link>}
                                 </div>
                             </div>
                         </div>
