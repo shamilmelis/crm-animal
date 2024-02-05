@@ -23,6 +23,9 @@ const CustomersPage = () => {
     }, [])
     useEffect(() => {
 
+    }, [customer])
+    useEffect(() => {
+
     }, [selectedId])
     // Функция которая закрывает модалку
     const closeModal = () => {
@@ -41,11 +44,14 @@ const CustomersPage = () => {
             })
     }
     const uploadToModal = (id) => {
-        axios.get(`https://65a6516774cf4207b4efbc00.mockapi.io/customers/${id}`)
-            .then(res => {
-                setCustomer(res.data)
-            })
-            .catch(err => console.log(err))
+           axios.get('https://65a6516774cf4207b4efbc00.mockapi.io/customers/' + id)
+               .then(res => {
+                   setTimeout(() => {
+                       setCustomer(res.data)
+                       console.log(customer)
+                   }, 300)
+               })
+               .catch(err => console.log(err))
     }
     // Верстка
     return (

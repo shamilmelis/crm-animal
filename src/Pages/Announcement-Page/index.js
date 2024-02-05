@@ -4,6 +4,7 @@ import '../Announcement-Page/media.scss'
 import NavMenu from "../../Components/NavMenu";
 import {useParams, useNavigate} from "react-router-dom";
 import {useState, useEffect} from "react";
+import {Link} from "react-router-dom";
 import axios from 'axios'
 import NoImage from '../../Images/image_not_available.png'
 const AnnouncementPage = () => {
@@ -13,8 +14,6 @@ const AnnouncementPage = () => {
     const [getImg, setGetImg] = useState('')
     const [modal, setModal] = useState(false)
     const [selectActive, setSelectActive] = useState(0)
-    const navigate = useNavigate()
-
     // useEffect который получает данные изображений
     useEffect(() => {
         axios.get(`https://65a6516774cf4207b4efbc00.mockapi.io/dogs/${id}`)
@@ -53,7 +52,7 @@ const AnnouncementPage = () => {
                         <div className={'announ_container'}>
                             <div className={'announ_box'}>
                                 <div className={'previous_page_box'}>
-                                    <button className={'previous_page_btn'} onClick={() => navigate(-1)}>В теплые руки</button>
+                                    <Link to={'/myorgs/v-teplye-ryki'} className={'previous_page_btn'}>В теплые руки</Link>
                                     <span>/</span>
                                     <span>обьявления</span>
                                     <span>/</span>
